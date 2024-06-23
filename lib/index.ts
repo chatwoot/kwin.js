@@ -1,3 +1,3 @@
-import Kwin from './kwin'
+import Kwin from './kwin';
 
-export default Kwin
+export default Kwin;

@@ -1,24 +1,28 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import Kwin from '../lib'
-const kwin = new Kwin()
+import { ref } from 'vue';
+import Kwin from '../lib';
 
-const isClicked = ref(false)
+const kwin = new Kwin({
+  connectorType: 'newrelic',
+  connectorOptions: JSON.parse(import.meta.env.VITE_NEWRELIC_KEY),
+});
 
-const currentEvent = ref()
+const isClicked = ref(false);
 
-const measure = ref('')
+const currentEvent = ref();
+
+const measure = ref('');
 
 const onClick = () => {
   if (!isClicked.value) {
-    currentEvent.value = kwin.start('button-click')
-    measure.value = ''
+    currentEvent.value = kwin.start('feature:create-contact');
+    measure.value = '';
   } else {
-    currentEvent.value.stop()
-    measure.value = currentEvent.value.measure.duration + 'ms'
+    currentEvent.value.stop();
+    measure.value = currentEvent.value.event.duration + 'ms';
   }
-  isClicked.value = !isClicked.value
-}
+  isClicked.value = !isClicked.value;
+};
 </script>
 
 <template>

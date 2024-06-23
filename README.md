@@ -11,9 +11,9 @@ The library uses the performance object which would give you the accuracy of to 
 A simple implementation is given below.
 
 ```js
-const kwin = new Kwin({ provider: 'newrelic', key: 'xxx-yyy' });
+const kwin = new Kwin({ provider: 'newrelic', key: 'xxx-yyy' })
 
-const measure = kwin.start('feature-1');
+const measure = kwin.start('feature-1')
 
-measure.stop();
+measure.stop()
 ```
