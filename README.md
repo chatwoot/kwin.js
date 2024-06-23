@@ -6,12 +6,19 @@ Unlike most of the frontend monitoring tools which would measure the lighthouse 
 
 You can measure the duration between specific events. For example, if you want to know how much time a user takes to perform an action, you could start measuring when the user clicks a button and stop when the response appears on the UI. This approach allows you to see the total duration, including time spent on rendering, API calls, and other processes.
 
-The library uses the performance object which would give you the accuracy of to 5 µs (microseconds).
+The library uses the performance object which would give you the accuracy of 5 µs (microseconds).
 
 A simple implementation is given below.
 
 ```js
-const kwin = new Kwin({ provider: 'newrelic', key: 'xxx-yyy' })
+const kwin = new Kwin({
+  connectorType: 'newrelic',
+  connectorOptions: {
+    init: {},
+    loader_config: {},
+    info: {}
+  }
+})
 
 const measure = kwin.start('feature-1')
 
