@@ -16,11 +16,11 @@ const kwin = new Kwin({
   connectorOptions: {
     init: {},
     loader_config: {},
-    info: {}
-  }
-})
+    info: {},
+  },
+});
 
-const measure = kwin.start('feature-1')
+const measure = kwin.start('feature-1');
 
-measure.stop()
+measure.stop();
 ```

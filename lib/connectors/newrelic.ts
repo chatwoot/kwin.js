@@ -7,7 +7,7 @@ class NewrelicConnector {
   constructor(newrelicOptions) {
     this.agent = new MicroAgent({
       ...newrelicOptions,
-      features: [PageAction]
+      features: [PageAction],
     });
   }
 

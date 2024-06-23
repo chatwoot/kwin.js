@@ -8,10 +8,7 @@ export type KwinEventTypes = {
 class KwinEventEmitter<KwinEvents extends Record<string, any>> {
   private emitter = new EventEmitter();
 
-  emit<E extends keyof KwinEvents & string>(
-    eventName: E,
-    ...args: Parameters<KwinEvents[E]>
-  ) {
+  emit<E extends keyof KwinEvents & string>(eventName: E, ...args: Parameters<KwinEvents[E]>) {
     this.emitter.emit(eventName, ...args);
   }
 

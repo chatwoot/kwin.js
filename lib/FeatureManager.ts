@@ -23,7 +23,7 @@ class FeatureManager extends KwinEventEmitter<KwinEventTypes> {
       id: this.id,
       featureName: this.featureName,
       duration: this.performanceMeasure?.duration,
-      startTime: this.performanceMeasure?.startTime
+      startTime: this.performanceMeasure?.startTime,
     };
   }
 
@@ -38,9 +38,12 @@ class FeatureManager extends KwinEventEmitter<KwinEventTypes> {
   }
 
   performMeasurement() {
-    this.performanceMeasure = performance.measure(this.markIdentifier, this.startMark, this.endMark);
+    this.performanceMeasure = performance.measure(
+      this.markIdentifier,
+      this.startMark,
+      this.endMark
+    );
   }
-
 }
 
 export default FeatureManager;

@@ -8,7 +8,7 @@ class Kwin {
     this.eventManager = new EventManager(connectorType, connectorOptions);
   }
 
-  start = (featureName) =>{
+  start = (featureName) => {
     const featureManager = new FeatureManager(featureName);
     featureManager.start();
     featureManager.on('stop', this.stop);
@@ -18,7 +18,6 @@ class Kwin {
   private stop = (featureManager: FeatureManager) => {
     this.eventManager.sendEvent(featureManager.event);
   };
-
 }
 
 export default Kwin;
