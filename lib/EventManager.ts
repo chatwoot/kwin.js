@@ -1,13 +1,13 @@
 import NewrelicConnector from './connectors/newrelic';
 
-type ConnectorType = 'newrelic' | 'datadog';
+type ConnectorType = 'newrelic' | 'datadog'
 
 type Event = {
-  id: string;
-  featureName: string;
-  startTime: Number;
-  duration: Number;
-};
+  id: string
+  featureName: string
+  startTime: Number
+  duration: Number
+}
 
 class EventManager {
   connector: NewrelicConnector;

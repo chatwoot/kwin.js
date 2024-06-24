@@ -1,8 +1,10 @@
 {
   "name": "kwin.js",
-  "version": "0.0.0",
-  "private": true,
+  "description": "A simple JS library to measure the frontend performance",
+  "version": "0.0.1",
+  "license": "MIT",
   "type": "module",
+  "main": "dist/kwin.js",
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
@@ -15,8 +17,7 @@
   },
   "dependencies": {
     "@newrelic/browser-agent": "^1.260.1",
-    "events": "^3.3.0",
-    "idb": "^8.0.0"
+    "events": "^3.3.0"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.8.0",
