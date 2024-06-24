@@ -17,6 +17,9 @@ const onClick = () => {
   if (!isClicked.value) {
     currentEvent.value = kwin.start('feature:create-contact');
     measure.value = '';
+    setInterval(() => {
+      currentEvent.value.mark(`mark-${new Date().getTime()}`);
+    }, 100);
   } else {
     currentEvent.value.stop();
     measure.value = currentEvent.value.event.duration + 'ms';
